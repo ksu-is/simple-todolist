@@ -39,3 +39,24 @@ def add_task():
         print("Task added successfully!")
     else:
         print("Task cannot be empty!")
+
+def mark_complete():
+    """Mark a task as complete"""
+    view_tasks()
+
+    if not tasks:
+        return
+
+    try:
+        task_number = int(input("\nEnter task number to mark as complete: "))
+        if 1 <= task_number <= len(tasks):
+            task = tasks[task_number - 1]
+            if task["status"] == "complete":
+                print("Task is already marked as complete!")
+            else:
+                task["status"] = "complete"
+                print("Task marked as complete!")
+        else:
+            print("Invalid task number!")
+    except ValueError:
+        print("Please enter a valid number!")
