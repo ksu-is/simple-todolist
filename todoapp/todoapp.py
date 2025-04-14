@@ -77,3 +77,23 @@ def delete_task():
             print("Invalid task number!")
     except ValueError:
         print("Please enter a valid number!")
+
+def main():
+    """Main program function"""
+    while True:
+        show_menu()
+        choice = input("Enter your choice (1-5): ")
+
+        if choice == "1":
+            view_tasks()
+        elif choice == "2":
+            add_task()
+        elif choice == "3":
+            mark_complete()
+        elif choice == "4":
+            delete_task()
+        elif choice == "5":
+            print("Thank you for using the To-Do List App. Goodbye!")
+            break
+        else:
+            print("Invalid choice! Please try again.")
